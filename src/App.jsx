@@ -34,7 +34,16 @@ function App() {
 
   return (
     <>
-      <h1 className='bg-warning'>Menu Bar</h1>
+      <h1 className='text-white'>Family Burguers</h1>
+      <h2 className='text-white'>Entradas</h2>
+      <h2 className='text-white'>Postres</h2>
+      <h2 className='text-white'>Bebidas</h2>
+      <h2 className='text-white'>Hamburguesas</h2>
+      {/* Falta el incluyen papas */}
+      {/* Caja de Agregados */}
+      <h2 className='text-white'>Hot Dogs</h2>
+      {/* Falta el incluyen papas */}
+
       {
         result.map(res => res.categoriaProducto === 'alfajor' ? (
           <div className="d-flex justify-content-between align-items-center bg-primary text-white p-1" key={res.nombreProducto}>

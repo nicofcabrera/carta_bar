@@ -12,6 +12,14 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+
+  --fuente-primera: 'Quicksand', sans-serif;
+  --fuente-segunda: 'Archivo Black', sans-serif;
+  --fuente-tercera: 'Concert One', cursive;
+  --fuente-cuarta: 'Black Han Sans', sans-serif;
+  --color-precio: #822400;
+  --color-etiqueta-negra: #000;
+  --color-descripcion: #ffd1a7;
 }
 
 a {
@@ -24,6 +32,11 @@ a:hover {
 }
 
 body {
+  background-color: #e06007;
+  font-family: var(--fuente-primera);
+  font-family: var(--fuente-tercera);
+  font-family: var(--fuente-segunda);
+  font-family: var(--fuente-cuarta);
   margin: 0;
   display: flex;
   place-items: center;
