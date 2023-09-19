@@ -4,6 +4,7 @@ import './App.css'
 
 function App() {
   const [result, setResult] = useState([])
+  const [loader,setLoader] = useState(false)
 
   const fetchData = async () => {
     try {
@@ -27,19 +28,104 @@ function App() {
     }
    }
 
+   const loading = () =>{
+      setTimeout(setLoader(true),2000)
+   }
+
   
    useEffect(()=>{
-    fetchData()
+    fetchData(),
+    loading()
    },[])
 
   return (
     <>
-      <h1 className='text-white mb-4'>Logo Burguers</h1>
-      <h2 className='text-white'>Entradas</h2>
-      <section className='mb-4'>
+      {/* <div className={loader ? "spinner-grow text-danger" : null} role="status">
+        <span className="visually-hidden">Loading...</span>
+      </div> */}
+      <main className={loader ? 'd-block' : 'd-none'}>
+        <h1 className='text-white mb-4'>Logo Burguers</h1>
+        <h2 className='text-white'>Entradas</h2>
+        <section className='mb-4 container'>
+          {
+            result.map(res => res.categoriaProducto === 'entradas' ? (
+              <article key={res.nombreProducto} className='d-flex flex-wrap justify-content-between'>
+                <p>{res.nombreProducto}</p>
+                <small>${res.precioProducto}</small>
+                {
+                  res.descripcionProducto ? (
+                  <p className='producto_descripcion'>({res.descripcionProducto})</p>
+                  ) : null
+                }
+              </article>
+            ): null)
+          }
+        </section>
+        <h2 className='text-white'>Postres</h2>
+        <section className='mb-4 container'>
+          {
+            result.map(res => res.categoriaProducto === 'postres' ? (
+              <article key={res.nombreProducto} className='d-flex flex-wrap justify-content-between'>
+                <p>{res.nombreProducto}</p>
+                <small>${res.precioProducto}</small>
+                {
+                  res.descripcionProducto ? (
+                  <p className='producto_descripcion'>({res.descripcionProducto})</p>
+                  ) : null
+                }
+              </article>
+            ): null)
+          }
+        </section>     
+        <h2 className='text-white'>Bebidas</h2>
+        <section className='mb-4 container'>
+          {
+            result.map(res => res.categoriaProducto === 'bebidas' ? (
+              <article key={res.nombreProducto} className='d-flex flex-wrap justify-content-between'>
+                <p>{res.nombreProducto}</p>
+                <small>${res.precioProducto}</small>
+                {
+                  res.descripcionProducto ? (
+                  <p className='producto_descripcion'>({res.descripcionProducto})</p>
+                  ) : null
+                }
+              </article>
+            ): null)
+          }
+        </section>
+        <h2 className='text-white'>Hamburguesas</h2>
+        <div className="incluyen_papas p-1 position-relative">
+          <div className="triangulo-primero position-absolute"></div>
+          Incluyen papas
+          <div className="triangulo-segundo position-absolute"></div>
+        </div>
+        <div className="triangulo-tricolor"></div>
+        <section className='mb-4 container'>
+          {
+            result.map(res => res.categoriaProducto === 'hamburguesas' ? (
+              <article key={res.nombreProducto} className='d-flex flex-wrap justify-content-between'>
+                <p>{res.nombreProducto}</p>
+                <small className='precio_producto'>${res.precioProducto}</small>
+                {
+                  res.descripcionProducto ? (
+                  <p className='producto_descripcion d-block'>({res.descripcionProducto})</p>
+                  ) : null
+                }
+              </article>
+            ): null)
+          }
+        </section>
+        {/* Caja de Agregados */}
+        <h2 className='text-white'>Hot Dogs</h2>
+        <div className="incluyen_papas p-1 position-relative">
+          <div className="triangulo-primero position-absolute"></div>
+          Incluyen papas
+          <div className="triangulo-segundo position-absolute"></div>
+        </div>
+        <section className='container'>
         {
-          result.map(res => res.categoriaProducto === 'entradas' ? (
-            <article key={res.nombreProducto} className='d-flex flex-wrap justify-content-between container'>
+          result.map(res => res.categoriaProducto === 'hotdog' ? (
+            <article key={res.nombreProducto} className='d-flex flex-wrap justify-content-between'>
               <p>{res.nombreProducto}</p>
               <small>${res.precioProducto}</small>
               {
@@ -50,83 +136,8 @@ function App() {
             </article>
           ): null)
         }
-      </section>
-      <h2 className='text-white'>Postres</h2>
-      <section className='mb-4'>
-        {
-          result.map(res => res.categoriaProducto === 'postres' ? (
-            <article key={res.nombreProducto} className='d-flex flex-wrap justify-content-between container'>
-              <p>{res.nombreProducto}</p>
-              <small>${res.precioProducto}</small>
-              {
-                res.descripcionProducto ? (
-                <p className='producto_descripcion'>({res.descripcionProducto})</p>
-                ) : null
-              }
-            </article>
-          ): null)
-        }
-      </section>     
-      <h2 className='text-white'>Bebidas</h2>
-      <section className='mb-4'>
-        {
-          result.map(res => res.categoriaProducto === 'bebidas' ? (
-            <article key={res.nombreProducto} className='d-flex flex-wrap justify-content-between container'>
-              <p>{res.nombreProducto}</p>
-              <small>${res.precioProducto}</small>
-              {
-                res.descripcionProducto ? (
-                <p className='producto_descripcion'>({res.descripcionProducto})</p>
-                ) : null
-              }
-            </article>
-          ): null)
-        }
-      </section>
-      <h2 className='text-white'>Hamburguesas</h2>
-      <div className="incluyen_papas p-1 position-relative">
-        <div className="triangulo-primero position-absolute"></div>
-        Incluyen papas
-        <div className="triangulo-segundo position-absolute"></div>
-      </div>
-      <div className="triangulo-tricolor"></div>
-      <section className='mb-4'>
-        {
-          result.map(res => res.categoriaProducto === 'hamburguesas' ? (
-            <article key={res.nombreProducto} className='d-flex flex-wrap justify-content-between container'>
-              <p>{res.nombreProducto}</p>
-              <small>${res.precioProducto}</small>
-              {
-                res.descripcionProducto ? (
-                <p className='producto_descripcion d-block'>({res.descripcionProducto})</p>
-                ) : null
-              }
-            </article>
-          ): null)
-        }
-      </section>
-      {/* Caja de Agregados */}
-      <h2 className='text-white'>Hot Dogs</h2>
-      <div className="incluyen_papas p-1 position-relative">
-        <div className="triangulo-primero position-absolute"></div>
-        Incluyen papas
-        <div className="triangulo-segundo position-absolute"></div>
-      </div>
-      <section>
-      {
-        result.map(res => res.categoriaProducto === 'hotdog' ? (
-          <article key={res.nombreProducto} className='d-flex flex-wrap justify-content-between container'>
-            <p>{res.nombreProducto}</p>
-            <small>${res.precioProducto}</small>
-            {
-              res.descripcionProducto ? (
-              <p className='producto_descripcion'>({res.descripcionProducto})</p>
-              ) : null
-            }
-          </article>
-        ): null)
-      }
-      </section>
+        </section>
+      </main>
     </>
   )
 }

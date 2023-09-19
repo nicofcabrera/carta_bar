@@ -17,9 +17,17 @@
   --fuente-segunda: 'Archivo Black', sans-serif;
   --fuente-tercera: 'Concert One', cursive;
   --fuente-cuarta: 'Black Han Sans', sans-serif;
+  --fuente-roboto: 'Roboto', sans-serif;
+  --fuente-raleway: 'Raleway', sans-serif;
+  --fuente-montserrat: 'Montserrat', sans-serif;
   --color-precio: #822400;
   --color-etiqueta-negra: #000;
   --color-descripcion: #ffd1a7;
+  --bg-color-main: 'asd';
+}
+
+html{
+  font-size: 16px;
 }
 
 a {
@@ -32,11 +40,8 @@ a:hover {
 }
 
 body {
-  background-color: #e06007;
   color: #fff;
-  font-family: var(--fuente-primera);
-  font-family: var(--fuente-tercera);
-  font-family: var(--fuente-segunda);
+  background-color: #e06007;
   font-family: var(--fuente-cuarta);
   margin: 0;
   display: flex;
@@ -53,13 +58,16 @@ h1 {
 
 p{
   margin: 0;
+  font-family: var(--fuente-montserrat);
+  font-weight: 400;
 }
 
 .producto_descripcion{
   color: var(--color-descripcion);
   text-shadow: none;
   font-family: sans-serif;
-  font-size: 12px;
+  font-family: var(--fuente-montserrat);
+  font-size: 0.875rem;
   flex-basis: 100%;
   text-align: left;
 }
@@ -67,16 +75,16 @@ p{
 .incluyen_papas{
   width: 0;
   width: 180px;
-  height: 36px;
+  height: 26px;
   background-color: #000;
   margin: 0 auto .5rem;
   font-family: sans-serif;
-  /* provisorio family */
+  font-family: var(--fuente-montserrat);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 13px;
-  box-shadow: 0 10px 12px -9px #000;
+  box-shadow: 0 12px 10px -10px #000 !important;
 }
 
 .triangulo-primero{
@@ -86,8 +94,8 @@ p{
   width: 0;
   height: 0;
   border-left: 1rem solid #e06007;
-  border-top: 18px solid transparent;
-  border-bottom: 18px solid transparent; 
+  border-top: 13px solid transparent;
+  border-bottom: 13px solid transparent; 
 }
 
 .triangulo-segundo{
@@ -97,6 +105,21 @@ p{
   width: 0;
   height: 0;
   border-right: 1rem solid #e06007;
-  border-top: 18px solid transparent;
-  border-bottom: 18px solid transparent; 
+  border-top: 13px solid transparent;
+  border-bottom: 13px solid transparent; 
+}
+
+article small{
+  color: var(--color-precio);
+  font-weight: 600;
+  font-family: var(--fuente-montserrat);
+}
+
+.spinner-grow{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
 }
