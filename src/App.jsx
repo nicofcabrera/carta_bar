@@ -4,7 +4,7 @@ import './App.css'
 
 function App() {
   const [result, setResult] = useState([])
-  const [loader,setLoader] = useState(false)
+  const [loader,setLoader] = useState(true)
 
   const fetchData = async () => {
     try {
@@ -29,7 +29,9 @@ function App() {
    }
 
    const loading = () =>{
-      setTimeout(setLoader(true),2000)
+      setTimeout(() => {
+        setLoader(false)
+      },1500)
    }
 
   
@@ -40,10 +42,10 @@ function App() {
 
   return (
     <>
-      {/* <div className={loader ? "spinner-grow text-danger" : null} role="status">
+      <div className={loader ? "spinner-grow text-danger" : 'd-none'} role="status">
         <span className="visually-hidden">Loading...</span>
-      </div> */}
-      <main className={loader ? 'd-block' : 'd-none'}>
+      </div>
+      <main className={loader ? 'd-none' : 'd-block'}>
         <h1 className='text-white mb-4'>Logo Burguers</h1>
         <h2 className='text-white'>Entradas</h2>
         <section className='mb-4 container'>
