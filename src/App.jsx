@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import Papa  from 'papaparse'
 import './App.css'
+import Footer from './components/footer/Footer'
 
 function App() {
   const [result, setResult] = useState([])
@@ -23,7 +24,6 @@ function App() {
       return setResult(parsed.data)
      
     } catch (error) {
-      // Manejar errores aquí
       console.error('Error al obtener el archivo CSV', error);
     }
    }
@@ -31,7 +31,7 @@ function App() {
    const loading = () =>{
       setTimeout(() => {
         setLoader(false)
-      },2000)
+      },2500)
    }
 
   
@@ -140,6 +140,7 @@ function App() {
         }
         </section>
       </main>
+      <Footer/>
     </>
   )
 }
