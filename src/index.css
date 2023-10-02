@@ -13,12 +13,8 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 
-  --fuente-primera: 'Quicksand', sans-serif;
-  --fuente-segunda: 'Archivo Black', sans-serif;
-  --fuente-tercera: 'Concert One', cursive;
+
   --fuente-cuarta: 'Black Han Sans', sans-serif;
-  --fuente-roboto: 'Roboto', sans-serif;
-  --fuente-raleway: 'Raleway', sans-serif;
   --fuente-montserrat: 'Montserrat', sans-serif;
   --color-precio: #822400;
   --color-etiqueta-negra: #000;
@@ -133,3 +129,26 @@ header > h1{
 footer p {
   font-size: 14px;
 }
+
+.sin_tacc{
+  font-size: 18px;
+  font-family: var(--fuente-montserrat);
+  width: 70%;
+  margin: 2rem auto;
+  /* font-weight: 700; */
+}
+
+/*
+.agregados{
+  width: 300px;
+  height: 230px;
+  margin: auto;
+}
+
+.agregados_titulo{
+  position: absolute;
+  transform: rotate(-90deg);
+  bottom: 40%;
+  right: 0;
+  background-color: #e06007;
+}*/
