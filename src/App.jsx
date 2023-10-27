@@ -122,25 +122,12 @@ function App() {
                 </article>
               ): null)
             }
-            {/* Falta Titulos de opc sin tacc */}
             {
               tituloBurger ? (
                 <h3 className='sin_tacc'>Consultar por opciones sin TACC</h3>
               ) : null
             }
-            {/* <div className="container position-relative">
-            <aside className='agregados border border-white rounded'>
-              <h3 className="agregados_titulo m-0">Agregados</h3>
-              <ul>
-                <li>Item 1</li>
-                <li>Item 2</li>
-                <li>Item 3</li>
-              </ul>
-            </aside>
-
-            </div> */}
             </section>
-            {/* Falta Caja de Agregados */}
             <h2 className='text-white'>Hot Dogs</h2>
             <div className="incluyen_papas p-1 position-relative">
               <div className="triangulo-primero position-absolute"></div>

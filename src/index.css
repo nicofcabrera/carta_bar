@@ -49,7 +49,6 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
-  /* padding: 2rem 0; */
 }
 
 h1 {
@@ -135,20 +134,4 @@ footer p {
   font-family: var(--fuente-montserrat);
   width: 70%;
   margin: 2rem auto;
-  /* font-weight: 700; */
 }
-
-/*
-.agregados{
-  width: 300px;
-  height: 230px;
-  margin: auto;
-}
-
-.agregados_titulo{
-  position: absolute;
-  transform: rotate(-90deg);
-  bottom: 40%;
-  right: 0;
-  background-color: #e06007;
-}*/
